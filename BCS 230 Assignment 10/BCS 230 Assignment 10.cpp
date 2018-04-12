@@ -44,7 +44,7 @@ void readFile(double *arr, int size, string fileName) {
 	ifstream inFile(fileName);
 	int i = 0;
 
-	while (inFile >> arr[i]) 
+	while (inFile >> *(arr + i)) 
 		i++;
 	inFile.close();
 }
@@ -66,5 +66,5 @@ double findAverage(double *arr, int size) {
 // printArray iterates through array pointed to by arr and prints each stored value.
 void printArray(double *arr, int size) {
 	for (int i = 0; i < size; i++) 
-		cout << arr[i] << endl;
+		cout << *(arr + i) << endl;
 }
