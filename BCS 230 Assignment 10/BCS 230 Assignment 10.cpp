@@ -32,10 +32,8 @@ int countLines(string fileName) {
 	double input = 0;
 	int dataSize = 0;
 
-	while (!inFile.eof()) {
-		inFile >> input;
+	while (inFile >> input) 
 		dataSize++;
-	}
 	inFile.close();
 	return dataSize;
 }
@@ -46,10 +44,8 @@ void readFile(double *arr, int size, string fileName) {
 	ifstream inFile(fileName);
 	int i = 0;
 
-	while (!inFile.eof()) {
-		inFile >> arr[i];
+	while (inFile >> arr[i]) 
 		i++;
-	}
 	inFile.close();
 }
 
@@ -57,10 +53,8 @@ void readFile(double *arr, int size, string fileName) {
 double findSum(double *arr, int size) {
 	double sum = 0.0;
 
-	for (int i = 0; i < size; i++) {
+	for (int i = 0; i < size; i++) 
 		sum += *(arr + i);
-	}
-
 	return sum;
 }
 
@@ -71,7 +65,6 @@ double findAverage(double *arr, int size) {
 
 // printArray iterates through array pointed to by arr and prints each stored value.
 void printArray(double *arr, int size) {
-	for (int i = 0; i < size; i++) {
+	for (int i = 0; i < size; i++) 
 		cout << arr[i] << endl;
-	}
 }
